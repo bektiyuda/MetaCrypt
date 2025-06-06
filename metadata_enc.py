@@ -14,7 +14,7 @@ def aes_encrypt(plaintext: str, key: bytes) -> bytes:
 
 def aes_decrypt(ciphertext: bytes, key: bytes) -> str:
     cipher = AES.new(key, AES.MODE_ECB)
-    decrypted = cipher.decrypt(ciphertext[16:])
+    decrypted = cipher.decrypt(ciphertext)
     return unpad(decrypted, AES.block_size).decode()
 
 def encrypt_metadata():
